@@ -1,0 +1,223 @@
+.
+├── .dart_tool
+│   ├── flutter_build
+│   │   ├── 816c2a468dcfef3cd9ce90c861d1d4b5
+│   │   │   ├── .filecache
+│   │   │   ├── app.dill
+│   │   │   ├── App.framework
+│   │   │   │   └── App
+│   │   │   ├── dart_build_result.json
+│   │   │   ├── dart_build.d
+│   │   │   ├── dart_build.stamp
+│   │   │   ├── debug_ios_bundle_flutter_assets.stamp
+│   │   │   ├── debug_ios_lldb_init.stamp
+│   │   │   ├── debug_universal_framework.stamp
+│   │   │   ├── debug_unpack_ios.stamp
+│   │   │   ├── flutter_assets.d
+│   │   │   ├── gen_dart_plugin_registrant.stamp
+│   │   │   ├── gen_localizations.stamp
+│   │   │   ├── install_code_assets.d
+│   │   │   ├── install_code_assets.stamp
+│   │   │   ├── IssueLaunchRootViewControllerAccess.stamp
+│   │   │   ├── kernel_snapshot_program.d
+│   │   │   ├── kernel_snapshot_program.stamp
+│   │   │   ├── native_assets.json
+│   │   │   └── outputs.json
+│   │   └── dart_plugin_registrant.dart
+│   ├── package_config.json
+│   ├── package_graph.json
+│   └── version
+├── .flutter-plugins-dependencies
+├── .gitignore
+├── .metadata
+├── analysis_options.yaml
+├── clean_architecture_tdd_course.iml
+├── ios
+│   ├── .gitignore
+│   ├── .symlinks
+│   │   └── plugins
+│   │       ├── connectivity -> /Users/rubensteijn/.pub-cache/hosted/pub.dev/connectivity-3.0.6/
+│   │       └── shared_preferences_foundation -> /Users/rubensteijn/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.5.5/
+│   ├── Flutter
+│   │   ├── AppFrameworkInfo.plist
+│   │   ├── Debug.xcconfig
+│   │   ├── ephemeral
+│   │   │   ├── flutter_lldb_helper.py
+│   │   │   └── flutter_lldbinit
+│   │   ├── flutter_export_environment.sh
+│   │   ├── Flutter.podspec
+│   │   ├── Generated.xcconfig
+│   │   └── Release.xcconfig
+│   ├── Podfile
+│   ├── Podfile.lock
+│   ├── Pods
+│   │   ├── Headers
+│   │   ├── Local Podspecs
+│   │   │   ├── connectivity.podspec.json
+│   │   │   ├── Flutter.podspec.json
+│   │   │   └── shared_preferences_foundation.podspec.json
+│   │   ├── Manifest.lock
+│   │   ├── Pods.xcodeproj
+│   │   │   ├── project.pbxproj
+│   │   │   └── xcuserdata
+│   │   │       └── rubensteijn.xcuserdatad
+│   │   │           └── xcschemes
+│   │   │               ├── connectivity.xcscheme
+│   │   │               ├── Flutter.xcscheme
+│   │   │               ├── Pods-Runner.xcscheme
+│   │   │               ├── Pods-RunnerTests.xcscheme
+│   │   │               ├── Reachability-Reachability_Privacy.xcscheme
+│   │   │               ├── Reachability.xcscheme
+│   │   │               ├── shared_preferences_foundation-shared_preferences_foundation_privacy.xcscheme
+│   │   │               ├── shared_preferences_foundation.xcscheme
+│   │   │               └── xcschememanagement.plist
+│   │   ├── Reachability
+│   │   │   ├── Framework
+│   │   │   │   └── PrivacyInfo.xcprivacy
+│   │   │   ├── LICENCE.txt
+│   │   │   ├── Reachability.h
+│   │   │   ├── Reachability.m
+│   │   │   └── README.md
+│   │   └── Target Support Files
+│   │       ├── connectivity
+│   │       │   ├── connectivity-dummy.m
+│   │       │   ├── connectivity-Info.plist
+│   │       │   ├── connectivity-prefix.pch
+│   │       │   ├── connectivity-umbrella.h
+│   │       │   ├── connectivity.debug.xcconfig
+│   │       │   ├── connectivity.modulemap
+│   │       │   └── connectivity.release.xcconfig
+│   │       ├── Flutter
+│   │       │   ├── Flutter.debug.xcconfig
+│   │       │   └── Flutter.release.xcconfig
+│   │       ├── Pods-Runner
+│   │       │   ├── Pods-Runner-acknowledgements.markdown
+│   │       │   ├── Pods-Runner-acknowledgements.plist
+│   │       │   ├── Pods-Runner-dummy.m
+│   │       │   ├── Pods-Runner-frameworks-Debug-input-files.xcfilelist
+│   │       │   ├── Pods-Runner-frameworks-Debug-output-files.xcfilelist
+│   │       │   ├── Pods-Runner-frameworks-Profile-input-files.xcfilelist
+│   │       │   ├── Pods-Runner-frameworks-Profile-output-files.xcfilelist
+│   │       │   ├── Pods-Runner-frameworks-Release-input-files.xcfilelist
+│   │       │   ├── Pods-Runner-frameworks-Release-output-files.xcfilelist
+│   │       │   ├── Pods-Runner-frameworks.sh
+│   │       │   ├── Pods-Runner-Info.plist
+│   │       │   ├── Pods-Runner-umbrella.h
+│   │       │   ├── Pods-Runner.debug.xcconfig
+│   │       │   ├── Pods-Runner.modulemap
+│   │       │   ├── Pods-Runner.profile.xcconfig
+│   │       │   └── Pods-Runner.release.xcconfig
+│   │       ├── Pods-RunnerTests
+│   │       │   ├── Pods-RunnerTests-acknowledgements.markdown
+│   │       │   ├── Pods-RunnerTests-acknowledgements.plist
+│   │       │   ├── Pods-RunnerTests-dummy.m
+│   │       │   ├── Pods-RunnerTests-Info.plist
+│   │       │   ├── Pods-RunnerTests-umbrella.h
+│   │       │   ├── Pods-RunnerTests.debug.xcconfig
+│   │       │   ├── Pods-RunnerTests.modulemap
+│   │       │   ├── Pods-RunnerTests.profile.xcconfig
+│   │       │   └── Pods-RunnerTests.release.xcconfig
+│   │       ├── Reachability
+│   │       │   ├── Reachability-dummy.m
+│   │       │   ├── Reachability-Info.plist
+│   │       │   ├── Reachability-prefix.pch
+│   │       │   ├── Reachability-umbrella.h
+│   │       │   ├── Reachability.debug.xcconfig
+│   │       │   ├── Reachability.modulemap
+│   │       │   ├── Reachability.release.xcconfig
+│   │       │   └── ResourceBundle-Reachability_Privacy-Reachability-Info.plist
+│   │       └── shared_preferences_foundation
+│   │           ├── ResourceBundle-shared_preferences_foundation_privacy-shared_preferences_foundation-Info.plist
+│   │           ├── shared_preferences_foundation-dummy.m
+│   │           ├── shared_preferences_foundation-Info.plist
+│   │           ├── shared_preferences_foundation-prefix.pch
+│   │           ├── shared_preferences_foundation-umbrella.h
+│   │           ├── shared_preferences_foundation.debug.xcconfig
+│   │           ├── shared_preferences_foundation.modulemap
+│   │           └── shared_preferences_foundation.release.xcconfig
+│   ├── Runner
+│   │   ├── AppDelegate.swift
+│   │   ├── Assets.xcassets
+│   │   │   ├── AppIcon.appiconset
+│   │   │   │   ├── Contents.json
+│   │   │   │   ├── Icon-App-1024x1024@1x.png
+│   │   │   │   ├── Icon-App-20x20@1x.png
+│   │   │   │   ├── Icon-App-20x20@2x.png
+│   │   │   │   ├── Icon-App-20x20@3x.png
+│   │   │   │   ├── Icon-App-29x29@1x.png
+│   │   │   │   ├── Icon-App-29x29@2x.png
+│   │   │   │   ├── Icon-App-29x29@3x.png
+│   │   │   │   ├── Icon-App-40x40@1x.png
+│   │   │   │   ├── Icon-App-40x40@2x.png
+│   │   │   │   ├── Icon-App-40x40@3x.png
+│   │   │   │   ├── Icon-App-60x60@2x.png
+│   │   │   │   ├── Icon-App-60x60@3x.png
+│   │   │   │   ├── Icon-App-76x76@1x.png
+│   │   │   │   ├── Icon-App-76x76@2x.png
+│   │   │   │   └── Icon-App-83.5x83.5@2x.png
+│   │   │   └── LaunchImage.imageset
+│   │   │       ├── Contents.json
+│   │   │       ├── LaunchImage.png
+│   │   │       ├── LaunchImage@2x.png
+│   │   │       ├── LaunchImage@3x.png
+│   │   │       └── README.md
+│   │   ├── Base.lproj
+│   │   │   ├── LaunchScreen.storyboard
+│   │   │   └── Main.storyboard
+│   │   ├── GeneratedPluginRegistrant.h
+│   │   ├── GeneratedPluginRegistrant.m
+│   │   ├── Info.plist
+│   │   └── Runner-Bridging-Header.h
+│   ├── Runner.xcodeproj
+│   │   ├── project.pbxproj
+│   │   ├── project.xcworkspace
+│   │   │   ├── contents.xcworkspacedata
+│   │   │   └── xcshareddata
+│   │   │       ├── IDEWorkspaceChecks.plist
+│   │   │       ├── swiftpm
+│   │   │       │   └── configuration
+│   │   │       └── WorkspaceSettings.xcsettings
+│   │   └── xcshareddata
+│   │       └── xcschemes
+│   │           └── Runner.xcscheme
+│   ├── Runner.xcworkspace
+│   │   ├── contents.xcworkspacedata
+│   │   └── xcshareddata
+│   │       ├── IDEWorkspaceChecks.plist
+│   │       ├── swiftpm
+│   │       │   └── configuration
+│   │       └── WorkspaceSettings.xcsettings
+│   └── RunnerTests
+│       └── RunnerTests.swift
+├── lib
+│   ├── core
+│   │   └── error
+│   │       └── failures.dart
+│   ├── features
+│   │   └── number_trivia
+│   │       ├── data
+│   │       ├── domain
+│   │       │   ├── entities
+│   │       │   │   └── number_trivia.dart
+│   │       │   ├── repositories
+│   │       │   │   └── number_trivia_repository.dart
+│   │       │   └── use_cases
+│   │       │       └── get_concrete_number_trivia.dart
+│   │       └── presentation
+│   └── main.dart
+├── project_structure.txt
+├── pubspec.lock
+├── pubspec.yaml
+├── README.md
+└── test
+    ├── core
+    ├── features
+    │   └── number trivia
+    │       ├── data
+    │       ├── domain
+    │       │   └── use_cases
+    │       │       └── get_concrete_number_trivia_test.dart
+    │       └── presentation
+    └── widget_test.dart
+
+64 directories, 157 files
