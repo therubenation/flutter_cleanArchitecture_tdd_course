@@ -1,0 +1,17 @@
+import '../../domain/entities/number_trivia.dart';
+
+/// Die Schnittstelle zur Außenwelt (Internet/API) innerhalb des Data Layers.
+///
+/// Ein niedrigstufiger Datenlieferant: holt Rohdaten von der Zahlen-Trivia-API.
+///
+abstract class NumberTriviaRemoteDataSource {
+  /// Calls the http://numbersapi.com/{number} endpoint.
+  ///
+  /// Throws a [ServerException] for all error codes.
+  Future<NumberTrivia> getConcreteNumberTrivia(int number);
+
+  /// Calls the http://numbersapi.com/random endpoint.
+  ///
+  /// Throws a [ServerException] for all error codes.
+  Future<NumberTrivia> getRandomNumberTrivia();
+}
