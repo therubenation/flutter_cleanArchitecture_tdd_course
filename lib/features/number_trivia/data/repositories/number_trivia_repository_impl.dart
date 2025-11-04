@@ -23,13 +23,15 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
   Future<Either<Failure, NumberTrivia>> getConcreteNumberTrivia(
     int number,
   ) async {
-    await networkInfo.isConnected; // the behavior this test verifies
-    return Left(ServerFailure()); // temporary stub to satisfy null-safety
+    await networkInfo.isConnected;
+    final remote = await remoteDataSource.getConcreteNumberTrivia(
+      number,
+    ); // NumberTriviaModel
+    return Right(remote);
   }
 
   @override
-  Future<Either<Failure, NumberTrivia>> getRandomNumberTrivia() {
-    // TODO: implement getRandomNumberTrivia
-    throw UnimplementedError();
+  Future<Either<Failure, NumberTrivia>> getRandomNumberTrivia() async {
+    return Left(ServerFailure()); // temporary; will be replaced by real logic
   }
 }
