@@ -44,6 +44,22 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
 
   @override
   Future<Either<Failure, NumberTrivia>> getRandomNumberTrivia() async {
-    return Left(ServerFailure()); // temporary; will be replaced by real logic
+    if (await networkInfo.isConnected) {
+      try {
+        final remoteTrivia = await remoteDataSource
+            .getRandomNumberTrivia(); // NumberTriviaModel
+        await localDataSource.cacheNumberTrivia(remoteTrivia);
+        return Right(remoteTrivia);
+      } on ServerException {
+        return Left(ServerFailure());
+      }
+    } else {
+      try {
+        final localTrivia = await localDataSource.getLastNumberTrivia();
+        return Right(localTrivia);
+      } on CacheException {
+        return Left(CacheFailure());
+      }
+    }
   }
 }
