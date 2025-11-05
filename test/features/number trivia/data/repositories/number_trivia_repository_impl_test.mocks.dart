@@ -102,7 +102,7 @@ class MockNumberTriviaLocalDataSource extends _i1.Mock
           as _i5.Future<_i3.NumberTriviaModel>);
 
   @override
-  _i5.Future<void> cacheNumberTrivia(_i3.NumberTriviaModel? triviaToCache) =>
+  _i5.Future<void> cacheNumberTrivia(_i2.NumberTrivia? triviaToCache) =>
       (super.noSuchMethod(
             Invocation.method(#cacheNumberTrivia, [triviaToCache]),
             returnValue: _i5.Future<void>.value(),
