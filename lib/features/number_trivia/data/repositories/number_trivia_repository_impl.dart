@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import '../../../../core/platform/network_info.dart';
+import '../../../../core/network/network_info.dart';
 import '../data_sources/number_trivia_remote_data_source.dart';
 import '../../domain/entities/number_trivia.dart';
 import '../../domain/repositories/number_trivia_repository.dart';
