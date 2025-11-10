@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:clean_architecture_tdd_course/core/error/exceptions.dart';
 import 'package:clean_architecture_tdd_course/features/number_trivia/data/data_sources/number_trivia_local_data_source.dart';
 import 'package:clean_architecture_tdd_course/features/number_trivia/data/models/number_trivia_model.dart';
@@ -7,7 +6,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../../../fixtures/fixture_reader.dart';
 import 'number_trivia_local_data_source_test.mocks.dart';
 
