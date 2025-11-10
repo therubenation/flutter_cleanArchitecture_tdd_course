@@ -130,7 +130,7 @@ void main() {
           // Assert
           verify(mockRemoteDataSource.getConcreteNumberTrivia(tNumber));
           verify(
-            mockLocalDataSource.cacheNumberTrivia(tNumberTrivia),
+            mockLocalDataSource.cacheNumberTrivia(tNumberTriviaModel),
           ); // caching
         },
       );
@@ -243,7 +243,7 @@ void main() {
           // Assert
           verify(mockRemoteDataSource.getRandomNumberTrivia());
           verify(
-            mockLocalDataSource.cacheNumberTrivia(tNumberTrivia),
+            mockLocalDataSource.cacheNumberTrivia(tNumberTriviaModel),
           ); // caching
         },
       );

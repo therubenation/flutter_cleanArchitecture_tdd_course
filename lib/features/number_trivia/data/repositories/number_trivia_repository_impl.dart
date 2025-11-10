@@ -1,13 +1,14 @@
 import 'package:dartz/dartz.dart';
 import '../../../../core/network/network_info.dart';
-import '../data_sources/number_trivia_remote_data_source.dart';
 import '../../domain/entities/number_trivia.dart';
+import '../data_sources/number_trivia_remote_data_source.dart';
 import '../../domain/repositories/number_trivia_repository.dart';
 import '../../../../core/error/exceptions.dart';
 import '../../../../core/error/failures.dart';
 import '../data_sources/number_trivia_local_data_source.dart';
+import '../models/number_trivia_model.dart';
 
-typedef _ConcreteOrRandomTriviaChooser = Future<NumberTrivia> Function();
+typedef _ConcreteOrRandomTriviaChooser = Future<NumberTriviaModel> Function();
 
 class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
   final NumberTriviaRemoteDataSource remoteDataSource;
@@ -44,16 +45,20 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
   ) async {
     if (await networkInfo.isConnected) {
       try {
-        final remoteTrivia = await getConcreteOrRandom(); // NumberTriviaModel
-        await localDataSource.cacheNumberTrivia(remoteTrivia);
-        return Right(remoteTrivia);
+        final NumberTriviaModel remoteTrivia =
+            await getConcreteOrRandom(); // <- MODEL
+        await localDataSource.cacheNumberTrivia(remoteTrivia); // <- passt
+        return Right<Failure, NumberTrivia>(
+          remoteTrivia,
+        ); // Model extends Entity -> ok
       } on ServerException {
         return Left(ServerFailure());
       }
     } else {
       try {
-        final localTrivia = await localDataSource.getLastNumberTrivia();
-        return Right(localTrivia);
+        final NumberTriviaModel localTrivia = await localDataSource
+            .getLastNumberTrivia(); // <- MODEL
+        return Right<Failure, NumberTrivia>(localTrivia);
       } on CacheException {
         return Left(CacheFailure());
       }
