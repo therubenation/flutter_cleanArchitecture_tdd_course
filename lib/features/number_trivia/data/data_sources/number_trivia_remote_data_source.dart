@@ -48,7 +48,7 @@ class NumberTriviaRemoteDataSourceImpl implements NumberTriviaRemoteDataSource {
   }
 
   @override
-  Future<NumberTriviaModel> getRandomNumberTrivia() {
+  Future<NumberTriviaModel> getRandomNumberTrivia() async {
     final n = _nextRandom(); // z. B. 11 im Test
     return getConcreteNumberTrivia(n); // delegieren
   }
