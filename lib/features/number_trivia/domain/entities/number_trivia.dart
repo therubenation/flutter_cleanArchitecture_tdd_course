@@ -7,7 +7,6 @@ class NumberTrivia extends Equatable {
   const NumberTrivia({required this.text, required this.number});
 
   @override
-  // TODO: implement props
   List<Object?> get props => [text, number];
 
   factory NumberTrivia.fromJson(Map<String, dynamic> json) {
