@@ -1,8 +1,10 @@
 import 'dart:convert';
 
+import '../../../../core/error/exceptions.dart';
 import '../../domain/entities/number_trivia.dart';
 import '../models/number_trivia_model.dart';
 import 'package:http/http.dart' as http;
+import 'dart:math';
 
 /// Die Schnittstelle zur Außenwelt (Internet/API) innerhalb des Data Layers.
 ///
@@ -20,9 +22,17 @@ abstract class NumberTriviaRemoteDataSource {
   Future<NumberTriviaModel> getRandomNumberTrivia();
 }
 
+typedef IntSupplier = int Function();
+
 class NumberTriviaRemoteDataSourceImpl implements NumberTriviaRemoteDataSource {
   final http.Client client;
-  NumberTriviaRemoteDataSourceImpl({required this.client});
+  final IntSupplier _nextRandom; // injizierbar für Tests
+
+  NumberTriviaRemoteDataSourceImpl({
+    required this.client,
+    IntSupplier? randomInt,
+  }) : _nextRandom = randomInt ?? (() => Random().nextInt(100) + 1);
+
   static const _base = 'https://api.math.tools';
 
   @override
@@ -30,15 +40,16 @@ class NumberTriviaRemoteDataSourceImpl implements NumberTriviaRemoteDataSource {
     final uri = Uri.parse('$_base/numbers/fact?number=$number');
     final headers = {'accept': 'application/json'};
 
-    final response = await client.get(uri, headers: headers);
+    final res = await client.get(uri, headers: headers);
+    if (res.statusCode != 200) throw ServerException();
 
-    // return NumberTriviaModel(number: number, text: ''); // Platzhalter
-    return NumberTriviaModel.fromJson(json.decode(response.body));
+    final map = json.decode(res.body) as Map<String, dynamic>;
+    return NumberTriviaModel.fromJson(map);
   }
 
   @override
   Future<NumberTriviaModel> getRandomNumberTrivia() {
-    // TODO: implement getRandomNumberTrivia
-    throw UnimplementedError();
+    final n = _nextRandom(); // z. B. 11 im Test
+    return getConcreteNumberTrivia(n); // delegieren
   }
 }
