@@ -145,5 +145,66 @@ void main() {
       ).called(1);
       verifyNoMoreInteractions(mockHttpClient);
     });
+
+    test(
+      'should return NumberTrivia when the response code is 200 (success)',
+      () async {
+        // Arrange
+        when(
+          mockHttpClient.get(
+            expectedUri,
+            headers: argThat(headersMatcher, named: 'headers'),
+          ),
+        ).thenAnswer(
+          (_) async => http.Response(fixture('trivia_math_tools.json'), 200),
+        );
+
+        // Act
+        final result = await dataSource.getRandomNumberTrivia();
+
+        // Assert
+        final expected = NumberTriviaModel.fromJson(
+          json.decode(fixture('trivia_math_tools.json'))
+              as Map<String, dynamic>,
+        );
+        expect(result.number, expected.number);
+        expect(result.text, expected.text);
+
+        verify(
+          mockHttpClient.get(
+            expectedUri,
+            headers: argThat(headersMatcher, named: 'headers'),
+          ),
+        ).called(1);
+        verifyNoMoreInteractions(mockHttpClient);
+      },
+    );
+
+    test(
+      'should throw ServerException when response code is 404 or other',
+      () async {
+        // Arrange
+        when(
+          mockHttpClient.get(
+            expectedUri,
+            headers: argThat(headersMatcher, named: 'headers'),
+          ),
+        ).thenAnswer((_) async => http.Response('oops', 404));
+
+        // Act + Assert
+        expect(
+          dataSource.getRandomNumberTrivia(),
+          throwsA(isA<ServerException>()),
+        );
+
+        verify(
+          mockHttpClient.get(
+            expectedUri,
+            headers: argThat(headersMatcher, named: 'headers'),
+          ),
+        ).called(1);
+        verifyNoMoreInteractions(mockHttpClient);
+      },
+    );
   });
 }
