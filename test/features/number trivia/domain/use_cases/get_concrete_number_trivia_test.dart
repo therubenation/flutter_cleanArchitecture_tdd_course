@@ -19,7 +19,7 @@ void main() {
     useCase = GetConcreteNumberTrivia(repository: mockRepo);
   });
 
-  const testNumber = 1;
+  const testNumber = 1; // which number here is meant? the number passed to the
   final testNumberTrivia = NumberTrivia(text: 'test', number: testNumber);
 
   test('should get trivia for the number from the repository', () async {

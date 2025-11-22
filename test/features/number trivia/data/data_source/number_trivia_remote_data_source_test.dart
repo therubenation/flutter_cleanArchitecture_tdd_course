@@ -6,8 +6,8 @@ import 'package:clean_architecture_tdd_course/features/number_trivia/data/models
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import '../../../../fixtures/fixture_reader.dart';
 import 'package:http/http.dart' as http;
+import '../../../../fixtures/fixture_reader.dart';
 import 'number_trivia_remote_data_source_test.mocks.dart';
 
 @GenerateMocks([http.Client])
